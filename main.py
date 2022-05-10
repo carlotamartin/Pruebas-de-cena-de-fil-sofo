@@ -1,12 +1,4 @@
-import tkinter as tk
+from ventana import window
 
-window = tk.Tk()
-window.title("Hello wold")
-window.geometry("300x300")
-
-hello = tk.Label(text="Hello world!")
-hello.pack()
-button = tk.Button(text="Click me!")
-button.pack()
-
-tk.mainloop()
+if __name__ == '__main__':
+  window()
