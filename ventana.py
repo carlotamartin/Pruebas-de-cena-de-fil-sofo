@@ -1,31 +1,49 @@
 import tkinter as tk
 
+import tkinter.ttk as ttk
+
 
 
 class window():
   def __init__ (self):
-    self.root = tk.Tk()
-    self.root.title('La cena de los filósofos')
-    self.root.configure(bg = 'gainsboro')
-    self.root.geometry('600x600')
+    #Creamos la ventana
+    self.window = tk.Tk()
+    self.window.title('La cena de los filósofos')
+    self.window.configure(bg = 'gainsboro')
+    self.window.geometry('600x600')
 
 
-    #Creamos a los filósofos
-    self.f1 = tk.Label(self.root, text= 'Filósofo 01', bg = 'pale violet red', fg = 'black', width = 9, height = 2)
+    #Creamos a los filósofos y los colocamos adecuadamente
+    
+    self.f1 = tk.Label(self.window, text= 'Filósofo 01', bg = 'pale violet red', fg = 'black', width = 9, height = 2)
     
     self.f1.place(x=85, y=30)
-    self.f1 = tk.Label(self.root, text= 'Filósofo 02', bg = 'floral white', fg = 'black', width = 9, height = 2)
+    
+    self.f1 = tk.Label(self.window, text= 'Filósofo 02', bg = 'floral white', fg = 'black', width = 9, height = 2)
+    
     self.f1.place(x=160, y=75)
-    self.f1 = tk.Label(self.root, text= 'Filósofo 03', bg = 'gold', fg = 'black', width = 9, height = 2)
+    
+    self.f1 = tk.Label(self.window, text= 'Filósofo 03', bg = 'gold', fg = 'black', width = 9, height = 2)
+    
     self.f1.place(x=170, y=130)
-    self.f1 = tk.Label(self.root, text= 'Filósofo 04', bg = 'pale violet red', fg = 'black', width = 9, height = 2)
+    
+    self.f1 = tk.Label(self.window, text= 'Filósofo 04', bg = 'pale violet red', fg = 'black', width = 9, height = 2)
+    
     self.f1.place(x=50, y=130)
-    self.f1 = tk.Label(self.root, text= 'Filósofo 05', bg = 'gold', fg = 'black', width = 9, height = 2)
+    
+    self.f1 = tk.Label(self.window, text= 'Filósofo 05', bg = 'gold', fg = 'black', width = 9, height = 2)
+    
     self.f1.place(x=30, y=75)
 
 
+    #Vamos a crear label donde introducir los filósofos
+    
+
+    
+
+
     '''
-    self.texto = tk.Text(self.root, height=12, width = 35) #texto donde va a ir los filósofos pensando
+    self.texto = tk.Text(self.window, height=12, width = 35) #texto donde va a ir los filósofos pensando
     self.scroll = tk.Scrollbar(self.texto, command = self.texto.yview) #establecemos que nuestra ventana va a tener una barra deslizante
     self.texto.configure(yscrollcommand = self.scroll.set) #configuramos netsra barra deslizante dentro de nuetro texto
     self.texto.place(x = 10,  y =185)
@@ -35,80 +53,70 @@ class window():
 
 
 
-
-    #Hacemos el cuadrado de texto de abajo
-    self.frame = tk.Frame(self.root,height=12, width = 35)
-
-    self.frame.place(x = 10,  y =185)
-
-    self.scrollbar = tk.Scrollbar(self.frame)
-    self.textt= tk.Text(self.frame,height=10, width = 33, yscrollcommand = self.scrollbar.set)
-    self.scrollbar.config(command = self.textt.yview)
-    self.scrollbar.pack(side= tk.RIGHT, fill = tk.Y)
-    self.textt.pack(side = 'left')
-
-#Hacemos el código de colores
+  #Hacemos el código de colores
     
-    self.l1 = tk.Label(self.root, text= 'Código de colores', fg = 'black', width = 20, height = 1,)
-    self.l1.place(x=300, y=30)
+    self.l1 = tk.Label(self.window, text= 'Código de colores', fg = 'black', width = 20, height = 1,font=("Arial", 14), anchor="w")
+    self.l1.place(x=310, y=20)
 
-    self.c2 = tk.Label(self.root, text= '', bg = 'pale violet red', width = 1, height = 1)
-    self.c2.place(x=300, y=50)
+    self.l2 = tk.Label(self.window, text= 'Filósofo entra a comer', bg = 'pale violet red', fg = 'black', width = 20, height = 1, anchor="w")
+    self.l2.place(x=340, y=50)
 
-    self.l2 = tk.Label(self.root, text= 'Filósofo entra a comer', fg = 'black', width = 20, height = 1)
-    self.l2.place(x=330, y=50)
-
-    self.c3 = tk.Label(self.root, text= '', bg = 'cyan2', width = 1, height = 1)
-    self.c3.place(x=300, y=80)
-    
-    self.l3 = tk.Label(self.root, text= 'Filósofo tiene un tenedor', fg = 'black', width = 20, height = 1)
-    self.l3.place(x=335, y=80)
-
-    self.c4 = tk.Label(self.root, text= '', bg = 'cyan2', width = 1, height = 1)
-    self.c4.place(x=300, y=80)
-
-    self.l4 = tk.Label(self.root, text= 'Filósofo está comiendo', fg = 'black', width = 20, height = 1)
+    self.l3 = tk.Label(self.window, text= 'Filósofo tiene un tenedor', bg = 'cyan2', fg = 'black', width = 20, height = 1, anchor="w")
+    self.l3.place(x=340, y=80)
+    self.l4 = tk.Label(self.window, text= 'Filósofo está comiendo', bg = 'gold', fg = 'black', width = 20, height = 1, anchor="w")
     self.l4.place(x=340, y=110)
 
-    self.c5 = tk.Label(self.root, text= '', bg = 'gold', width = 1, height = 1)
-    self.c5.place(x=300, y=80)
-
-    self.l5 = tk.Label(self.root, text= 'Filósofo está pensando', fg = 'black', width = 20, height = 1)
+    self.l5 = tk.Label(self.window, text= 'Filósofo está pensando',bg = 'floral white',  fg = 'black', width = 20, height = 1, anchor="w")
     self.l5.place(x=340, y=140)
 
-    self.c6 = tk.Label(self.root, text= '', bg = 'floral white', width = 1, height = 1)
-    self.c6.place(x=300, y=80)
-
-    self.l6 = tk.Label(self.root, text= 'Tenedor ocupado', fg = 'black', width = 20, height = 1)
+    self.l6 = tk.Label(self.window, text= 'Tenedor ocupado',  bg = 'blue2', fg = 'black', width = 20, height = 1, anchor="w")
     self.l6.place(x=340, y=170)
 
-    self.c7 = tk.Label(self.root, text= '', bg = 'blue2', width = 1, height = 1)
-    self.c7.place(x=300, y=80)
-
-    self.l7 = tk.Label(self.root, text= 'Tenedor libre', fg = 'black', width = 20, height = 1)
+    self.l7 = tk.Label(self.window, text= 'Tenedor libre', bg = 'ivory2', fg = 'black', width = 20, height = 1, anchor="w")
     self.l7.place(x=340, y=200)
 
-    self.c2 = tk.Label(self.root, text= '', bg = 'ivory2', width = 1, height = 1)
-    self.c2.place(x=300, y=80)
+
+    #Creamos los botones de abajo
+
+    self.boton_inicio= tk.Button(self.window,text = 'Iniciar',fg = 'black', width = 7, height = 1, command = self.run)
+    self.boton_inicio.place(x = 50, y = 400)
+    self.boton_pausar= tk.Button(self.window, text = 'Pausar',fg = 'black', width = 7, height = 1, command = self.close)
+    self.boton_pausar.place(x = 150, y = 400)
+    self.boton_reset= tk.Button(self.window, text = 'Reset',fg = 'black', width = 7, height = 1, command = self.close)
+    self.boton_reset.place(x = 250, y = 400)
+    self.boton_salir= tk.Button(self.window, text = 'Salir',fg = 'black', width = 7, height = 1, command = self.close)
+    self.boton_salir.place(x = 350, y = 400)
+    self.boton_creditos= tk.Button(self.window, text = 'Créditos', fg = 'black', width = 7, height = 1, command = self.close)
+    self.boton_creditos.place(x = 450, y = 400)
+    
+    
+
+
+    #Hacemos el cuadrado de texto de abajo
+    
+    
+    self.frame = ttk.Frame(self.window,height=12, width = 35)
+
+    self.frame.place(x = 10,  y =185)
+    
+    self.scrollbar = tk.Scrollbar(self.frame)
+    self.texto= tk.Text(self.window,height=10, width = 33)
+    self.scrollbar.config(command = self.texto.yview)
+    self.scrollbar.pack(side= tk.RIGHT, fill = tk.Y)
+    self.texto.place(x = 12,  y =190)
+
 
     
 
     
   
-    self.root.mainloop()
+    self.window.mainloop()
 
   def imprimir(self, texto):
-    self.texto.insert(tk.END, str(texto) + '\n')
+      self.texto.insert(tk.END, str(texto) + '\n')
 
-
-  def glosario(self):
-    self.l1 = tk.Label(self.root, text= 'Código de colores', fg = 'black', width = 9, height = 2)
-    self.l1.place(x=200, y=30)
-
-    self.l2 = tk.Label(self.root, text= 'Filósofo entra a comer', fg = 'black', width = 9, height = 2)
-    self.l2.place(x=210, y=50)
-    self.l3 = tk.Label(self.root, text= 'Filósofo está comiendo', fg = 'black', width = 9, height = 2)
-    self.l3.place(x=210, y=50)
+  def close(self):
+      self.window.withdraw()
     
-
-  
+  def run(self):
+      self.window.mainloop()
