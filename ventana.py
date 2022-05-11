@@ -1,7 +1,5 @@
 import tkinter as tk
 
-import tkinter.ttk as ttk
-
 
 
 class window():
@@ -34,23 +32,7 @@ class window():
     self.f1 = tk.Label(self.window, text= 'Filósofo 05', bg = 'gold', fg = 'black', width = 9, height = 2)
     
     self.f1.place(x=30, y=75)
-
-
-    #Vamos a crear label donde introducir los filósofos
-    
-
-    
-
-
-    '''
-    self.texto = tk.Text(self.window, height=12, width = 35) #texto donde va a ir los filósofos pensando
-    self.scroll = tk.Scrollbar(self.texto, command = self.texto.yview) #establecemos que nuestra ventana va a tener una barra deslizante
-    self.texto.configure(yscrollcommand = self.scroll.set) #configuramos netsra barra deslizante dentro de nuetro texto
-    self.texto.place(x = 10,  y =185)
-    self.scroll.config (command= self.texto.yview)
-    self.scroll.pack(side = tk.RIGHT, fill= tk.Y)
-'''
-
+  
 
 
   #Hacemos el código de colores
@@ -94,24 +76,12 @@ class window():
 
     #Hacemos el cuadrado de texto de abajo
     
-    
-    self.frame = ttk.Frame(self.window,height=12, width = 35)
-
-    self.frame.place(x = 10,  y =185)
-    
-    self.scrollbar = tk.Scrollbar(self.frame)
-    self.texto= tk.Text(self.window,height=10, width = 33)
-    self.scrollbar.config(command = self.texto.yview)
-    self.scrollbar.pack(side= tk.RIGHT, fill = tk.Y)
+    self.texto = tk.Text(self.window, height=10, width = 30) #texto donde va a ir los filósofos pensando
+    self.scroll = tk.Scrollbar(self.window) #establecemos que nuestra ventana va a tener una barra deslizante
+    self.texto.configure(yscrollcommand = self.scroll.set) #configuramos netsra barra deslizante dentro de nuetro texto
     self.texto.place(x = 12,  y =190)
-
-
-    
-
-    
-  
-    self.window.mainloop()
-
+    self.scroll.config (command= self.texto.yview)
+    self.scroll.pack(side = tk.RIGHT, fill=tk.Y)
   def imprimir(self, texto):
       self.texto.insert(tk.END, str(texto) + '\n')
 
